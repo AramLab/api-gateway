@@ -3,8 +3,8 @@ package dto
 import "time"
 
 type TaskResponse struct {
-	ID          int       `json:"id"`
-	UserID      int       `json:"user_id"`
+	ID          string    `json:"id"`
+	UserID      string    `json:"user_id"`
 	Title       string    `json:"title"`
 	Description string    `json:"description"`
 	Status      string    `json:"status"`
@@ -12,7 +12,7 @@ type TaskResponse struct {
 }
 
 type TaskRequest struct {
-	UserID      int    `json:"user_id" validate:"required"`
+	UserID      string `json:"user_id" validate:"required"`
 	Title       string `json:"title" validate:"required"`
 	Description string `json:"description"`
 	Status      string `json:"status" validate:"oneof=new in_progress done"`
