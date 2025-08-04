@@ -18,6 +18,7 @@ type ServerConfig struct {
 	WriteTimeout string `envconfig:"WRITE_TIMEOUT" required:"true"`
 	Secret       string `envconfig:"SECRET" required:"true"`
 	GRPCPort     string `envconfig:"GRPC_PORT" required:"true"`
+	TODOPort     string `envconfig:"TODO_PORT" required:"true"`
 }
 
 func LoadConfig() (*APIGatewayConfig, error) {

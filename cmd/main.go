@@ -43,7 +43,7 @@ func main() {
 	authHandler := handlers.NewAuthHandler(grpcClient, logger)
 	defer grpcClient.Close()
 
-	taskHandler := handlers.NewTaskHandler(logger, "http://localhost"+cfg.Server.ListenAddr)
+	taskHandler := handlers.NewTaskHandler(logger, "http://localhost"+cfg.Server.TODOPort+"/v1")
 
 	app := router.NewRouters(&router.Routers{TaskHandler: *taskHandler, AuthHandler: *authHandler}, cfg.Server.Secret)
 
